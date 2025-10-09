@@ -17,12 +17,17 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatIconModule} from '@angular/material/icon';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+//Para el paginator
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatPaginatorIntl } from '@angular/material/paginator';
+import { getSpanishPaginatorIntl } from './shared/spanish-paginator-intl';
 
 import { NavbarComponent } from './partials/navbar/navbar.component';
 import { SidenavComponent } from './partials/sidenav/sidenav.component';
 import { PageHeaderComponent } from './partials/page-header/page-header.component';
 import { FooterComponent } from './partials/footer/footer.component';
 import { LoadingSpinnerComponent } from './partials/loading-spinner/loading-spinner.component';
+import { PersonajesScreenComponent } from './screens/personajes-screen/personajes-screen.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +38,8 @@ import { LoadingSpinnerComponent } from './partials/loading-spinner/loading-spin
     SidenavComponent,
     PageHeaderComponent,
     FooterComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    PersonajesScreenComponent
   ],
   imports: [
     BrowserModule,
@@ -48,9 +54,12 @@ import { LoadingSpinnerComponent } from './partials/loading-spinner/loading-spin
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatPaginatorModule
   ],
-  providers: [],
+  providers: [
+    { provide: MatPaginatorIntl, useValue: getSpanishPaginatorIntl() }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
