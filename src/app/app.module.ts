@@ -28,6 +28,7 @@ import { PageHeaderComponent } from './partials/page-header/page-header.componen
 import { FooterComponent } from './partials/footer/footer.component';
 import { LoadingSpinnerComponent } from './partials/loading-spinner/loading-spinner.component';
 import { PersonajesScreenComponent } from './screens/personajes-screen/personajes-screen.component';
+import { SagasScreenComponent } from './screens/sagas-screen/sagas-screen.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { PersonajesScreenComponent } from './screens/personajes-screen/personaje
     PageHeaderComponent,
     FooterComponent,
     LoadingSpinnerComponent,
-    PersonajesScreenComponent
+    PersonajesScreenComponent,
+    SagasScreenComponent
   ],
   imports: [
     BrowserModule,

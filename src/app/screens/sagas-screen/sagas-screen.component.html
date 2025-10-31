@@ -1,0 +1,43 @@
+<!-- sagas-screen.component.html -->
+<section class="sagas-screen" aria-label="Sagas de Dragon Ball Z">
+  <!-- Loading -->
+  <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+
+  <!-- Shell común -->
+  <app-navbar></app-navbar>
+  <app-sidenav></app-sidenav>
+
+  <!-- Contenido principal -->
+  <main class="main-content" [class.hidden]="isLoading" role="main">
+    <!-- Encabezado -->
+    <app-page-header
+      [title]="'Sagas'"
+      [subtitle]="'Consulta las sagas y los rangos de episodios que las componen'">
+    </app-page-header>
+
+    <!-- Toolbar -->
+    <!-- Toolbar: Buscar + Ordenar (Material, estilo “pill”) -->
+    <!-- Toolbar: Buscar + Ordenar (Material, estilo “pill”) -->
+
+    <div class="toolbar" role="region" aria-label="Herramientas de búsqueda y orden" *ngIf="!isLoading">
+      <div class="toolbar-row">
+        <!-- Grupo: Buscar -->
+        <div class="field-group">
+          <label class="toolbar-label" for="buscarSagasMat">Buscar:</label>
+          <mat-form-field appearance="outline" class="pill-field search-mat-field">
+            <mat-icon class="search-prefix" matPrefix>search</mat-icon>
+            <input
+              matInput
+              id="buscarSagasMat"
+              type="search"
+              [value]="query"
+              (input)="onSearch($event)"
+              placeholder="Nombre de la saga"
+              aria-label="Buscar saga por nombre" />
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </main>
+
+</section>
